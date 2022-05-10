@@ -1,0 +1,222 @@
+@font-face {
+  font-family: 'TT Lakes Regular';
+  src: local('TT Lakes Regular');
+  src: url('../fonts/TTLakes-Regular.eot');
+  src: url('../fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/TTLakes-Regular.woff') format('woff'),
+    url('../fonts/TTLakes-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes Medium';
+  src: local('TT Lakes Medium');
+  src: url('../fonts/TTLakes-Medium.eot');
+  src: url('../fonts/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/TTLakes-Medium.woff') format('woff'),
+    url('../fonts/TTLakes-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/*ОБЩИЕ СТИЛИ*/
+.main__container {
+  background-color: #F8F8F8;
+}
+
+.main__header {
+  font-family: 'TT Lakes Regular';
+  font-size: 16px;
+  color: #7E7E82;
+  line-height: 24px;
+  text-transform: uppercase;
+  background-image: linear-gradient(270deg, #FFFFFF 0%, #FDFDFD 25.68%, #FCFCFC 52.39%, #FAFAFA 75.5%, #F8F8F8 98.61%);
+    
+  border-top: 2px solid #D9FFF5;
+  }
+
+.swiper-slide__link-slide {
+  display: flex;
+  box-sizing: border-box;
+  
+  height: 72px;
+  padding: 0 16px;
+    
+  background: url(../icon/arrow_link.svg) no-repeat center right 16px,
+              #fff;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+}
+
+.swiper-slide__link-img {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+/*Мобильная версия*/
+
+@media (max-width: 767px) {
+  .main__container {
+    position: relative;
+    width: 100vw;
+    min-height: 234px;
+  }
+  
+  .main__container::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 87px;
+    width: 24px;
+    height: 81px;
+
+    background-image: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    z-index: 2;
+  }
+
+  .main__header {
+    padding: 16px;
+  }
+
+  .swiper-container {
+    overflow-x: clip;
+  }
+
+  .swiper-container__swiper-wrapper {
+    width: 240px;
+    padding: 16px;
+  }
+
+  .swiper-wraper__swiper-pagination {
+   top: 184px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+
+    opacity: 1;
+    background-color: #DDDDDD;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #B5B6BC;
+  }
+
+  .button-show {
+    display: none;
+  }
+
+}
+
+/*ПЛАНШЕТЫ И ПК ОБЩИЕ*/
+
+@media (min-width: 768px) {
+  .main__container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main__header {
+    padding: 16px 0;
+  }
+
+  .swiper-container__swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    row-gap: 16px;
+}
+
+.swiper-container__swiper-wrapper--hidden {
+    max-height: 152px;
+    overflow-y: hidden;
+  }
+
+  .main__button-show {
+    margin-top: 6px;
+  }
+
+  .button-show__wrap {
+    cursor: pointer;
+  }
+
+  .button-show__btn {
+    width: 24px;
+    height: 24px;
+
+    border: none;
+    background-color: transparent;
+  }
+
+  .button-show__close {
+    transform: scaleY(-1);
+    transition:300ms ease-in;
+  }
+
+  .button-show__text {
+    font-family: 'TT Lakes Medium';
+    font-size: 16px;
+    color: #1B1C21;
+  }
+
+  .swiper-wraper__swiper-pagination {
+    display: none;
+  }
+}
+
+/*ПЛАНШЕТЫ*/
+@media (min-width: 768px) and (max-width: 1119px) {
+  .main__container {
+    max-width: 768px;    
+    padding-left: 24px;
+    padding-bottom: 34px;
+  }
+
+  .swiper-container__swiper-wrapper {
+    column-gap: 24px;
+  }
+
+  .siper-wraper__swiper-slide,
+  .swiper-slide__link-slide  {
+    width:  224px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .main__container {
+    max-width: 1120px;
+
+    padding-left: 32px;
+    padding-bottom: 34px;
+  }
+
+    .swiper-container__swiper-wrapper {
+    column-gap: 32px;
+  }
+
+  .siper-wraper__swiper-slide,
+  .swiper-slide__link-slide  {
+    width: 240px;
+  }
+}
